@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Font Control</title>
+</head>
+<body>
+  <h2>Change Paragraph Style</h2>
+
+  <p id="myPara" style="border: 2px solid black; padding: 10px; width: 300px;">
+    Change the border color and width below.
+  </p>
+
+  <label>Enter RGB (like 255,0,0 for red):</label>
+  <input type="text" id="rgbInput" placeholder="e.g. 0,128,255"><br><br>
+
+  <label>Enter Border Width (px):</label>
+  <input type="number" id="widthInput" placeholder="5"><br><br>
+
+  <button onclick="updateStyle()">Apply Changes</button>
+
+  <script>
+    function updateStyle() {
+      let rgb = document.getElementById("rgbInput").value;
+      let width = document.getElementById("widthInput").value;
+
+      let para = document.getElementById("myPara");
+
+      para.style.color = "rgb(" + rgb + ")";
+      para.style.borderColor = "rgb(" + rgb + ")";
+      if (width) {
+        para.style.borderWidth = width + "px";
+      }
+    }
+  </script>
+</body>
+</html>
